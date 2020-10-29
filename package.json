@@ -1,0 +1,30 @@
+{
+  "name": "@astronautlabs/rtp",
+  "version": "0.0.1",
+  "description": "An RTP implementation for Node.js and the browser ",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "doc",
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astronautlabs/rtp.git"
+  },
+  "keywords": [
+    "rtp",
+    "network",
+    "media",
+    "sdp"
+  ],
+  "author": "Astronaut Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astronautlabs/rtp/issues"
+  },
+  "homepage": "https://github.com/astronautlabs/rtp#readme"
+}
