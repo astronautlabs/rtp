@@ -9,6 +9,7 @@
     "test": "tests"
   },
   "scripts": {
+    "build:cpp": "mkdir build && cd build && cmake ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
