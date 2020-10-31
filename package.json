@@ -9,7 +9,8 @@
     "test": "tests"
   },
   "scripts": {
-    "build:cpp": "mkdir build && cd build && cmake ..",
+    "cpp:configure": "mkdir build && cd build && cmake ..",
+    "cpp:build": "cd build && cmake --build . --config Release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
