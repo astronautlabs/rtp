@@ -42,39 +42,23 @@ int main(void)
 #endif // RTP_SOCKETTYPE_WINSOCK
 	
 	RTPSession sess;
-	uint16_t portbase,destport;
+	uint16_t portbase = 8000;
+	std::string ipstr = "0.0.0.0";
+	uint16_t destport = 10000;
 	uint32_t destip;
-	std::string ipstr;
-	int status,i,num;
+	int status,i;
+	int num = 100;
 
 	std::cout << "Using version " << RTPLibraryVersion::GetVersion().GetVersionString() << std::endl;
 
 	// First, we'll ask for the necessary information
 		
-	std::cout << "Enter local portbase:" << std::endl;
-	std::cin >> portbase;
-	std::cout << std::endl;
-	
-	std::cout << "Enter the destination IP address" << std::endl;
-	std::cin >> ipstr;
 	destip = inet_addr(ipstr.c_str());
-	if (destip == INADDR_NONE)
-	{
-		std::cerr << "Bad IP address specified" << std::endl;
-		return -1;
-	}
 	
 	// The inet_addr function returns a value in network byte order, but
 	// we need the IP address in host byte order, so we use a call to
 	// ntohl
 	destip = ntohl(destip);
-	
-	std::cout << "Enter the destination port" << std::endl;
-	std::cin >> destport;
-	
-	std::cout << std::endl;
-	std::cout << "Number of packets you wish to be sent:" << std::endl;
-	std::cin >> num;
 	
 	// Now, we'll create a RTP session, set the destination, send some
 	// packets and poll for incoming data.
