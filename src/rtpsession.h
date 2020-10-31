@@ -154,6 +154,8 @@ public:
 	 */
 	int SendPacket(const void *data,size_t len);
 
+	int SetTimestamp(uint32_t newTimestamp);
+	
 	/** Sends the RTP packet with payload \c data which has length \c len.
 	 *  It will use payload type \c pt, marker \c mark and after the packet has been built, the 
 	 *  timestamp will be incremented by \c timestampinc.

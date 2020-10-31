@@ -622,6 +622,11 @@ int RTPSession::SendPacket(const void *data,size_t len)
 	return 0;
 }
 
+
+int RTPSession::SetTimestamp(uint32_t newTimestamp) {
+	return packetbuilder.SetTimestamp(newTimestamp);
+}
+
 int RTPSession::SendPacket(const void *data,size_t len,
                 uint8_t pt,bool mark,uint32_t timestampinc)
 {

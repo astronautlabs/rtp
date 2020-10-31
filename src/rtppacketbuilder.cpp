@@ -71,7 +71,7 @@ int RTPPacketBuilder::Init(size_t max)
 		return ERR_RTP_OUTOFMEM;
 	packetlength = 0;
 	
-	CreateNewSSRC();
+	CreateNewSSRC(0);
 
 	deftsset = false;
 	defptset = false;
@@ -159,10 +159,18 @@ void RTPPacketBuilder::ClearCSRCList()
 	numcsrcs = 0;
 }
 
-uint32_t RTPPacketBuilder::CreateNewSSRC()
+int RTPPacketBuilder::SetTimestamp(uint32_t newTimestamp) {
+	timestamp = newTimestamp;
+	return 0;
+}
+
+uint32_t RTPPacketBuilder::CreateNewSSRC(uint32_t initialTimestamp)
 {
 	ssrc = rtprnd.GetRandom32();
-	timestamp = rtprnd.GetRandom32();
+	if (initialTimestamp > 0)
+		timestamp = initialTimestamp;
+	else
+		timestamp = rtprnd.GetRandom32();
 	seqnr = rtprnd.GetRandom16();
 
 	// p 38: the count SHOULD be reset if the sender changes its SSRC identifier

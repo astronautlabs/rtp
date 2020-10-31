@@ -136,6 +136,15 @@ public:
 	/** Sets the default marker bit to \c m. */
 	int SetDefaultMark(bool m);
 
+	/**
+	 * Set the timestamp of the next generated packet to the 
+	 * given value. This is useful when the source of the timestamp 
+	 * is external, such as when implementing standards where 
+	 * the RTP timestamp offset from the media clock (typically wall clock)
+	 * is zero, such as in SMPTE ST 2110-*.
+	 */
+	int SetTimestamp(uint32_t timestamp);
+
 	/** Sets the default timestamp increment to \c timestampinc. */
 	int SetDefaultTimestampIncrement(uint32_t timestampinc);
 
@@ -160,7 +169,7 @@ public:
 	 *  Creates a new SSRC to be used in generated packets. This will also generate new timestamp and 
 	 *  sequence number offsets.
 	 */
-	uint32_t CreateNewSSRC();
+	uint32_t CreateNewSSRC(uint32_t initialTimestamp);
 
 	/** Creates a new SSRC to be used in generated packets. 
 	 *  Creates a new SSRC to be used in generated packets. This will also generate new timestamp and 
