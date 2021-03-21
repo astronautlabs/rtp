@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir build
+mkdir -p build
 cd build
 cmake ..
-cmake --release
-cmake --debug
+cmake --build --config Release
+cmake --build --config Debug
