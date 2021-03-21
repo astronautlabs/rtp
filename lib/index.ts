@@ -1,0 +1,1 @@
+throw new Error(`This module is (temporarily) only available via C++`);
