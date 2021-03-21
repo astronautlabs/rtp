@@ -14,7 +14,8 @@
   "scripts": {
     "cpp:configure": "cmake -A x64 -S . -B build",
     "cpp:build": "cd build && cmake --build . --config Release",
-    "install": "npm run cpp:configure && npm run cpp:build",
+    "cpp:build:debug": "cd build && cmake --build . --config Debug",
+    "install": "npm run cpp:configure && npm run cpp:build && npm run cpp:build:debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
