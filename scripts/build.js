@@ -16,6 +16,7 @@ if (process.platform === 'win32') {
     // and bash barfs on this...
         
     fs.writeFileSync(buildScript, fs.readFileSync(buildScript).toString('utf-8').replace(/\r\n/g, "\n"));
+    fs.chmodSync(buildScript, 0o755);
 
     let proc = child_process.spawn(buildScript, { stdio: 'inherit' });
     proc.on('error', err => {
