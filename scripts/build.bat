@@ -5,5 +5,5 @@ cmake --build . --config Release
 cmake --build . --config Debug
 
 
-cp src\Debug\jrtplib_d.lib src\Debug\jrtplib.lib
-cp src\jrtplib-static.dir\Debug\jrtplib-static.pdb src\Debug\jrtplib-static.pdb
+copy src\Debug\jrtplib_d.lib src\Debug\jrtplib.lib
+copy src\jrtplib-static.dir\Debug\jrtplib-static.pdb src\Debug\jrtplib-static.pdb
