@@ -9,7 +9,7 @@ if (process.platform === 'win32') {
         console.error(`Error: ${err}`);
     });
 } else {
-    let proc = child_process.spawn(path.resolve(__dirname, 'build.sh'), { stdio: 'inherit' });
+    let proc = child_process.spawn(`bash ${path.resolve(__dirname, 'build.sh')}`, { stdio: 'inherit' });
     proc.on('error', err => {
         console.error(`Error: ${err}`);
     });
