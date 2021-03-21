@@ -12,7 +12,7 @@
     "test": "tests"
   },
   "scripts": {
-    "cpp:configure": "mkdirp build && cmake -A x64 -S . -B build",
+    "cpp:configure": "mkdirp build && cd build && cmake -A x64 ..",
     "cpp:build": "cd build && cmake --build . --config Release",
     "cpp:build:debug": "cd build && cmake --build . --config Debug",
     "install": "npm run cpp:configure && npm run cpp:build && npm run cpp:build:debug",
