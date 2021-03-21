@@ -593,6 +593,30 @@ void RTPSession::LeaveAllMulticastGroups()
 	rtptrans->LeaveAllMulticastGroups();
 }
 
+int RTPSession::SendPacket(RTPPacket *packet) 
+{
+	int status;
+	
+	if (!created)
+		return ERR_RTP_SESSION_NOTCREATED;
+
+	BUILDER_LOCK
+	if ((status = SendRTPData(packet->GetPacketData(), packet->GetPacketLength())) < 0)
+	{
+		BUILDER_UNLOCK
+		return status;
+	}
+	BUILDER_UNLOCK
+
+	SOURCES_LOCK
+	sources.SentRTPPacket();
+	SOURCES_UNLOCK
+	PACKSENT_LOCK
+	sentpackets = true;
+	PACKSENT_UNLOCK
+	return 0;
+}
+
 int RTPSession::SendPacket(const void *data,size_t len)
 {
 	int status;
