@@ -15,6 +15,7 @@
     "build": "node scripts/build.js",
     "build:lib": "tsc",
     "preinstall": "npm run build",
+    "prepublishOnly": "npm run build:lib",
     "test": "exit 0"
   },
   "repository": {
