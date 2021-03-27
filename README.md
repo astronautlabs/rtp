@@ -1,22 +1,33 @@
 # @/rtp
 ## An RTP implementation for Node.js and the browser 
 
-> ⚠️ **Alpha Quality**  
-> This software is very new and unstable. Use with caution, and avoid use in 
-> production without careful consideration. Major API changes may be made 
-> frequently.
+> ✅ **Release Quality**  
+> This package is being used at Astronaut Labs for our production use cases
 
 > 📘 **Attribution**  
 > Based on [JRTPLIB](https://github.com/j0r1/JRTPLIB) by Jori Liesenborgs,
 > originally developed at the Expertise Centre for Digital Media (EDM), a research 
 > institute of the Hasselt University
 
+# Installing 
+
+You must have `cmake` available to build this package (even at runtime):
+
+```bash
+choco install cmake  # windows
+apt install cmake    # linux
+brew install cmake   # mac
+```
+
+Then, add a dependency to it:
+
+```
+npm install @astronautlabs/rtp
+```
+
 # Contributing 
 
-This library is in heavy development. It is changing rapidly by the day. We highly recommend 
-you open an issue to discuss the improvements you are interested in before you start work, or risk 
-inadvertently clashing with rapid changes being made to the codebase. 
-
+We welcome contributions, feel free to raise issues or file pull requests. Make sure to review and abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 # Development 
 
