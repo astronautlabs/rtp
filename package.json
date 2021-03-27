@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
+    "build:lib": "tsc",
     "preinstall": "npm run build",
     "test": "exit 0"
   },
@@ -36,6 +37,7 @@
     "mkdirp": "^1.0.4"
   },
   "devDependencies": {
-    "@types/node": "^14.14.35"
+    "@types/node": "^14.14.35",
+    "typescript": "^4.2.3"
   }
 }
