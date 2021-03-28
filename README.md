@@ -1,15 +1,29 @@
 # @/rtp
-## An RTP implementation for Node.js and the browser 
 
-> ✅ **Release Quality**  
-> This package is being used at Astronaut Labs for our production use cases
+> **[📜 IETF RFC 3550](https://tools.ietf.org/html/rfc3550)**  
+> RTP: A Transport Protocol for Real-Time Applications
 
 > 📘 **Attribution**  
 > Based on [JRTPLIB](https://github.com/j0r1/JRTPLIB) by Jori Liesenborgs,
 > originally developed at the Expertise Centre for Digital Media (EDM), a research 
 > institute of the Hasselt University
 
-# Installing 
+> 📺 Part of the **Astronaut Labs Broadcast Suite**  
+> [@/rfc8331](https://github.com/astronautlabs/rfc8331) |
+> [@/rtp](https://github.com/astronautlabs/rtp) |
+> [@/scte104](https://github.com/astronautlabs/scte104) | 
+> [@/scte35](https://github.com/astronautlabs/scte35) | 
+> [@/st2010](https://github.com/astronautlabs/st2010) | 
+> [@/st291](https://github.com/astronautlabs/st291)
+
+> ✅ **Release Quality**  
+> This package is ready for production
+
+---
+
+An RTP implementation in C++ based on JRTPLib. Native bindings for Node.js coming soon.
+
+## Installing 
 
 You must have `cmake` available to build this package (even at runtime):
 
@@ -25,13 +39,13 @@ Then, add a dependency to it:
 npm install @astronautlabs/rtp
 ```
 
-# Contributing 
+## Contributing 
 
 We welcome contributions, feel free to raise issues or file pull requests. Make sure to review and abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-# Development 
+## Development 
 
-## C++ Defines
+### C++ Defines
 
 - `RTP_HAVE_SYS_FILIO`:  Set if `<sys/filio.h>` exists.
 - `RTP_HAVE_SYS_SOCKIO`: Set if `<sys/sockio.h>` exists.
@@ -57,7 +71,7 @@ We welcome contributions, feel free to raise issues or file pull requests. Make 
 - `RTPDEBUG`: Enables some memory tracking functions and some debug 
   routines.
     
-## Cross-compilation of JThread & JRTPLIB for Android
+### Cross-compilation of JThread & JRTPLIB for Android
 
 **Warning:** When cross-compiling, the configuration defaults to big-endian.
 But since most Android systems are little-endian, you should probably change
