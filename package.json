@@ -1,6 +1,6 @@
 {
   "name": "@astronautlabs/rtp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An RTP implementation for Node.js and the browser ",
   "main": "dist/index.js",
   "publishConfig": {
